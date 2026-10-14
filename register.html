@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký tài khoản - VLearn English Center</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .auth-banner {
+      flex: 1.1;
+      background: linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%);
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-banner::after {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+    }
+
+    .auth-form-side {
+      flex: 0.9;
+      background: #ffffff;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .auth-card {
+      width: 100%;
+      max-width: 460px;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-page">
+    <!-- Left Hero Side -->
+    <div class="auth-banner">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="brand-icon" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(8px);">V</div>
+        <div style="font-size: 20px; font-weight: 800; letter-spacing: -0.5px;">VLearn Center</div>
+      </div>
+
+      <div style="max-width: 500px; position: relative; z-index: 2;">
+        <div class="badge badge-success" style="background: rgba(255,255,255,0.2); color: #fff; border: none; margin-bottom: 16px;">
+          ✦ GHI DANH KHÓA HỌC MỚI
+        </div>
+        <h1 style="font-size: 34px; font-weight: 800; line-height: 1.25; margin-bottom: 16px;">
+          Bắt Đầu Hành Trình<br>Chinh Phục Tiếng Anh.
+        </h1>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6;">
+          Đăng ký tài khoản học viên để nhận kết quả kiểm tra năng lực đầu vào miễn phí, xếp lớp phù hợp và tra cứu thời khóa biểu tức thì.
+        </p>
+      </div>
+
+      <div style="font-size: 12.5px; color: rgba(255,255,255,0.65);">
+        © 2026 VLearn English Center Management System. All rights reserved.
+      </div>
+    </div>
+
+    <!-- Right Register Form Side -->
+    <div class="auth-form-side">
+      <div class="auth-card">
+        <div style="margin-bottom: 24px;">
+          <h2 style="font-size: 26px; font-weight: 800; color: var(--text-main); letter-spacing: -0.5px;">Tạo Tài Khoản Mới</h2>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin-top: 4px;">Điền thông tin học viên để bắt đầu nhập học</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); window.location.href='index.html';">
+          <div class="form-group">
+            <label>Họ và Tên đầy đủ (*)</label>
+            <input type="text" class="form-input-text" placeholder="Ví dụ: Nguyễn Văn An" required>
+          </div>
+
+          <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div>
+              <label>Địa chỉ Email (*)</label>
+              <input type="email" class="form-input-text" placeholder="an.nguyen@gmail.com" required>
+            </div>
+            <div>
+              <label>Số Điện Thoại (*)</label>
+              <input type="tel" class="form-input-text" placeholder="0912.456.789" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div>
+              <label>Mật Khẩu (*)</label>
+              <input type="password" class="form-input-text" placeholder="Ít nhất 6 ký tự" required>
+            </div>
+            <div>
+              <label>Nhập Lại Mật Khẩu (*)</label>
+              <input type="password" class="form-input-text" placeholder="Khớp mật khẩu trên" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div>
+              <label>Ngày Sinh</label>
+              <input type="date" class="form-input-text">
+            </div>
+            <div>
+              <label>Giới Tính</label>
+              <select class="form-input-text">
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 20px; font-size: 12.5px; color: var(--text-muted); display: flex; align-items: flex-start; gap: 8px;">
+            <input type="checkbox" checked required style="margin-top: 3px;">
+            <span>Tôi đồng ý với Quy chế đào tạo và Chính sách bảo mật thông tin học viên của VLearn.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 15px;">
+            Đăng Ký & Vào Bảng Điều Khiển →
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 24px; font-size: 13.5px; color: var(--text-muted);">
+          Đã có tài khoản? <a href="login.html" style="color: var(--primary); font-weight: 700;">Đăng nhập ngay</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VLearn English Center - UI Mockup Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon">V</div>
+        <div>
+          <div class="brand-title">VLearn</div>
+          <div class="brand-subtitle">ENGLISH CENTER</div>
+        </div>
+      </div>
+
+      <div class="sidebar-menu" id="sidebarMenuContainer">
+        <!-- Rendered dynamically by app.js based on active role -->
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="user-avatar" id="sidebarUserAvatar">A</div>
+          <div class="user-info">
+            <div class="user-name" id="sidebarUserName">Admin Hoàng Long</div>
+            <div class="user-role-badge" id="sidebarUserRole">Quản trị viên</div>
+          </div>
+        </div>
+        <div style="margin-top: 10px;">
+          <a href="login.html" class="btn btn-secondary btn-sm" style="width: 100%;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Đăng xuất
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+    <div class="main-wrapper">
+      <!-- HEADER / TOPBAR -->
+      <header class="header">
+        <div class="header-left">
+          <div class="header-title-box">
+            <h2 id="topNavTitle">Bảng Điều Khiển Quản Trị</h2>
+            <p>VLEARN / KHÔNG GIAN LÀM VIỆC TẬP TRUNG</p>
+          </div>
+        </div>
+
+        <!-- ROLE SWITCHER INTERACTIVE PILL -->
+        <div class="role-switcher-box">
+          <button class="role-tab-btn active" data-role="Admin" onclick="switchRole('Admin')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Admin
+          </button>
+          <button class="role-tab-btn" data-role="Receptionist" onclick="switchRole('Receptionist')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Lễ Tân
+          </button>
+          <button class="role-tab-btn" data-role="Teacher" onclick="switchRole('Teacher')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+            Giáo Viên
+          </button>
+          <button class="role-tab-btn" data-role="Student" onclick="switchRole('Student')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Học Viên
+          </button>
+        </div>
+
+        <div class="header-actions">
+          <div class="icon-btn" title="Thông báo mới" onclick="switchView('notices')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notif-badge"></span>
+          </div>
+          <a href="login.html" class="btn btn-secondary btn-sm" title="Xem trang Đăng nhập độc lập">
+            Trang Login
+          </a>
+          <a href="register.html" class="btn btn-primary btn-sm" title="Xem trang Đăng ký">
+            Đăng ký
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTENT SECTIONS -->
+      <main class="content-area">
+
+        <!-- ==================== 1. DASHBOARD VIEW ==================== -->
+        <section id="view-dashboard" class="view-section">
+          <!-- Hero Banner -->
+          <div class="hero-banner">
+            <div class="hero-content">
+              <div class="hero-tag">🌟 TRUNG TÂM TIẾNG ANH CHUẨN QUỐC TẾ</div>
+              <h1 class="hero-title">Chào mừng trở lại, VLearn English Center!</h1>
+              <p class="hero-desc">Hệ thống đang quản lý 12 lớp học đang mở, 248 học viên tích cực và tỷ lệ chuyên cần đạt 94.6% trong tuần này.</p>
+              <div class="hero-actions">
+                <button class="btn btn-white" onclick="openModal('modal-add-student')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                  Ghi Danh Mới
+                </button>
+                <button class="btn btn-ghost-white" onclick="switchView('schedule')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Xem Lịch Hôm Nay
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat KPI Cards -->
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div>
+                <div class="stat-label">Tổng Số Học Viên</div>
+                <div class="stat-value">342</div>
+                <div class="stat-meta positive">
+                  <span>↑ +14.2%</span> so với tháng trước
+                </div>
+              </div>
+              <div class="stat-icon blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div>
+                <div class="stat-label">Học Phí Thu Trong Tháng</div>
+                <div class="stat-value">286.500.000 ₫</div>
+                <div class="stat-meta positive">
+                  <span>↑ +8.5%</span> đạt 95% chỉ tiêu
+                </div>
+              </div>
+              <div class="stat-icon green">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div>
+                <div class="stat-label">Lớp Học Đang Hoạt Động</div>
+                <div class="stat-value">18 Lớp</div>
+                <div class="stat-meta neutral">
+                  <span>● 4 ca/ngày</span> 3 cơ sở đào tạo
+                </div>
+              </div>
+              <div class="stat-icon amber">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div>
+                <div class="stat-label">Tỷ Lệ Chuyên Cần</div>
+                <div class="stat-value">94.8%</div>
+                <div class="stat-meta positive">
+                  <span>↑ +2.1%</span> mục tiêu duy trì >92%
+                </div>
+              </div>
+              <div class="stat-icon purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row -->
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 28px;">
+            <!-- Bar Chart Card -->
+            <div class="card" style="margin-bottom: 0;">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Doanh Thu Thu Học Phí (6 Tháng Gần Nhất)</div>
+                  <div class="card-desc">Đơn vị tính: Triệu VNĐ</div>
+                </div>
+                <span class="badge badge-success"><span class="badge-dot"></span> Tăng trưởng ổn định</span>
+              </div>
+              <div class="card-body">
+                <div class="mock-bar-chart">
+                  <div class="chart-bar-group">
+                    <div class="chart-bar" style="height: 55%;" title="T5: 165M"></div>
+                    <div class="chart-bar-label">Tháng 5</div>
+                  </div>
+                  <div class="chart-bar-group">
+                    <div class="chart-bar" style="height: 68%;" title="T6: 198M"></div>
+                    <div class="chart-bar-label">Tháng 6</div>
+                  </div>
+                  <div class="chart-bar-group">
+                    <div class="chart-bar" style="height: 62%;" title="T7: 180M"></div>
+                    <div class="chart-bar-label">Tháng 7</div>
+                  </div>
+                  <div class="chart-bar-group">
+                    <div class="chart-bar" style="height: 82%;" title="T8: 245M"></div>
+                    <div class="chart-bar-label">Tháng 8</div>
+                  </div>
+                  <div class="chart-bar-group">
+                    <div class="chart-bar" style="height: 75%;" title="T9: 220M"></div>
+                    <div class="chart-bar-label">Tháng 9</div>
+                  </div>
+                  <div class="chart-bar-group">
+                    <div class="chart-bar" style="height: 96%;" title="T10: 286M"></div>
+                    <div class="chart-bar-label">Tháng 10 (Hiện tại)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Attendance Donut Breakdown -->
+            <div class="card" style="margin-bottom: 0;">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Tỷ Lệ Điểm Danh Tuần</div>
+                  <div class="card-desc">Thống kê 1.240 lượt học</div>
+                </div>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <svg width="150" height="150" viewBox="0 0 36 36" style="transform: rotate(-90deg);">
+                  <!-- Present 85% -->
+                  <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#10b981" stroke-width="3.5" stroke-dasharray="85 15" stroke-dashoffset="0"/>
+                  <!-- Late 8% -->
+                  <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#f59e0b" stroke-width="3.5" stroke-dasharray="8 92" stroke-dashoffset="-85"/>
+                  <!-- Absent 5% -->
+                  <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#ef4444" stroke-width="3.5" stroke-dasharray="5 95" stroke-dashoffset="-93"/>
+                  <!-- Excused 2% -->
+                  <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#0ea5e9" stroke-width="3.5" stroke-dasharray="2 98" stroke-dashoffset="-98"/>
+                </svg>
+                <div style="width: 100%; margin-top: 20px; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="display: flex; justify-content: space-between; font-size: 12.5px;">
+                    <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></span> Có mặt:</span>
+                    <strong>85.0% (1.054)</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12.5px;">
+                    <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #f59e0b;"></span> Đi muộn:</span>
+                    <strong>8.0% (99)</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12.5px;">
+                    <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444;"></span> Vắng không phép:</span>
+                    <strong>5.0% (62)</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12.5px;">
+                    <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #0ea5e9;"></span> Vắng có phép:</span>
+                    <strong>2.0% (25)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Classes Table -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Ca Học Diễn Ra Hôm Nay</div>
+                <div class="card-desc">Lịch học tự động đồng bộ từ Thời Khóa Biểu</div>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="switchView('attendance')">Điểm danh nhanh</button>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Lớp Học</th>
+                    <th>Giáo Viên</th>
+                    <th>Khung Giờ</th>
+                    <th>Phòng Học</th>
+                    <th>Sĩ Số</th>
+                    <th>Tình Trạng</th>
+                    <th>Thao Tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>IELTS Intensive 6.5+ (K24)</strong></td>
+                    <td>Mr. Robert Taylor</td>
+                    <td>18:00 - 19:30</td>
+                    <td>Phòng Lab 301</td>
+                    <td>18/20 HV</td>
+                    <td><span class="badge badge-success"><span class="badge-dot"></span> Đang diễn ra</span></td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" onclick="switchView('attendance')">Điểm danh</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>TOEIC 750 Cấp Tốc (K12)</strong></td>
+                    <td>Ms. Sarah Miller</td>
+                    <td>19:45 - 21:15</td>
+                    <td>Phòng 204</td>
+                    <td>22/25 HV</td>
+                    <td><span class="badge badge-warning"><span class="badge-dot"></span> Sắp diễn ra</span></td>
+                    <td>
+                      <button class="btn btn-secondary btn-sm" onclick="switchView('attendance')">Chuẩn bị</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Giao Tiếp Thương Mại Pro</strong></td>
+                    <td>Thầy Nguyễn Hải Nam</td>
+                    <td>18:00 - 19:30</td>
+                    <td>Phòng VIP 102</td>
+                    <td>12/12 HV</td>
+                    <td><span class="badge badge-info"><span class="badge-dot"></span> Đã điểm danh</span></td>
+                    <td>
+                      <button class="btn btn-secondary btn-sm" onclick="switchView('results')">Nhập điểm</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 2. STUDENTS MANAGEMENT VIEW ==================== -->
+        <section id="view-students" class="view-section" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 800;">Quản Lý Hồ Sơ Học Viên</h2>
+              <p style="font-size: 13px; color: var(--text-muted);">Danh sách học viên toàn trung tâm, hồ sơ liên hệ và tình trạng học vụ</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn btn-secondary" onclick="showToast('Đang trích xuất file Excel danh sách...', 'info')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Xuất Excel
+              </button>
+              <button class="btn btn-primary" onclick="openModal('modal-add-student')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                + Thêm Học Viên Mới
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter & Search Bar -->
+          <div class="filter-bar">
+            <div class="search-input-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" class="form-control" placeholder="Tìm theo tên học viên, mã HV (HV-2026...), số điện thoại...">
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <select class="filter-select">
+                <option value="">Tất cả trạng thái</option>
+                <option value="active">Đang theo học (Active)</option>
+                <option value="reserved">Bảo lưu (Reserved)</option>
+                <option value="graduated">Đã tốt nghiệp (Graduated)</option>
+                <option value="dropped">Thôi học (Dropped)</option>
+              </select>
+              <select class="filter-select">
+                <option value="">Tất cả khóa học</option>
+                <option value="ielts">IELTS Master</option>
+                <option value="toeic">TOEIC Chuyên sâu</option>
+                <option value="comm">Giao tiếp phản xạ</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Students Table -->
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Học Viên</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Lớp Đang Học</th>
+                    <th>Học Phí</th>
+                    <th>Chuyên Cần</th>
+                    <th>Trạng Thái</th>
+                    <th>Hành Động</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="table-user">
+                        <div class="table-user-avatar" style="background: #eff6ff; color: #2563eb;">NA</div>
+                        <div>
+                          <div class="table-user-name">Nguyễn Văn An</div>
+                          <div class="table-user-code">Mã: HV-2026-081</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>0912.456.789</td>
+                    <td><strong>IELTS Intensive 6.5+</strong></td>
+                    <td><span class="badge badge-success"><span class="badge-dot"></span> Đã đóng đủ</span></td>
+                    <td><strong style="color: #10b981;">96%</strong> (24/25 buổi)</td>
+                    <td><span class="badge badge-info"><span class="badge-dot"></span> Đang học</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="table-btn" title="Xem chi tiết" onclick="switchView('class-detail')">👁️</button>
+                        <button class="table-btn" title="Chỉnh sửa" onclick="openModal('modal-add-student')">✏️</button>
+                        <button class="table-btn" title="Đóng học phí" onclick="openModal('modal-payment')">💳</button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="table-user">
+                        <div class="table-user-avatar" style="background: #fdf2f8; color: #db2777;">TH</div>
+                        <div>
+                          <div class="table-user-name">Trần Thu Hà</div>
+                          <div class="table-user-code">Mã: HV-2026-094</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>0988.112.233</td>
+                    <td><strong>TOEIC 750 Cấp Tốc</strong></td>
+                    <td><span class="badge badge-warning"><span class="badge-dot"></span> Còn nợ 2.000.000₫</span></td>
+                    <td><strong style="color: #f59e0b;">88%</strong> (22/25 buổi)</td>
+                    <td><span class="badge badge-info"><span class="badge-dot"></span> Đang học</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="table-btn" title="Xem chi tiết" onclick="switchView('class-detail')">👁️</button>
+                        <button class="table-btn" title="Chỉnh sửa" onclick="openModal('modal-add-student')">✏️</button>
+                        <button class="table-btn" title="Đóng học phí" onclick="openModal('modal-payment')">💳</button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="table-user">
+                        <div class="table-user-avatar" style="background: #f0fdf4; color: #16a34a;">LM</div>
+                        <div>
+                          <div class="table-user-name">Lê Minh Khang</div>
+                          <div class="table-user-code">Mã: HV-2026-102</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>0903.778.899</td>
+                    <td><strong>Giao Tiếp Thương Mại Pro</strong></td>
+                    <td><span class="badge badge-danger"><span class="badge-dot"></span> Quá hạn thanh toán</span></td>
+                    <td><strong style="color: #ef4444;">72%</strong> (18/25 buổi)</td>
+                    <td><span class="badge badge-warning"><span class="badge-dot"></span> Cảnh báo chuyên cần</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="table-btn" title="Xem chi tiết" onclick="switchView('class-detail')">👁️</button>
+                        <button class="table-btn" title="Chỉnh sửa" onclick="openModal('modal-add-student')">✏️</button>
+                        <button class="table-btn" title="Đóng học phí" onclick="openModal('modal-payment')">💳</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 3. TEACHERS VIEW ==================== -->
+        <section id="view-teachers" class="view-section" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 800;">Đội Ngũ Giảng Viên</h2>
+              <p style="font-size: 13px; color: var(--text-muted);">Quản lý chứng chỉ sư phạm, phân công giảng dạy và đánh giá chất lượng</p>
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Mở form tuyển dụng giảng viên mới', 'info')">
+              + Tiếp Nhận Giảng Viên Mới
+            </button>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+            <!-- Teacher Card 1 -->
+            <div class="card" style="margin-bottom: 0;">
+              <div class="card-body">
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+                  <div style="width: 56px; height: 56px; border-radius: 50%; background: #eff6ff; color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800;">RT</div>
+                  <div>
+                    <h3 style="font-size: 16px; font-weight: 800;">Mr. Robert Taylor</h3>
+                    <p style="font-size: 12px; color: var(--text-muted);">Giảng viên Bản ngữ (Anh Quốc) • 8 năm kinh nghiệm</p>
+                    <div style="display: flex; gap: 6px; margin-top: 6px;">
+                      <span class="badge badge-purple">IELTS 9.0</span>
+                      <span class="badge badge-info">CELTA</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; font-size: 13px; display: flex; justify-content: space-between;">
+                  <span>Lớp đang dạy: <strong>3 lớp</strong></span>
+                  <span>Đánh giá: <strong style="color: #f59e0b;">★ 4.95 / 5.0</strong></span>
+                </div>
+                <div style="margin-top: 14px;">
+                  <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="switchView('schedule')">Xem lịch dạy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Teacher Card 2 -->
+            <div class="card" style="margin-bottom: 0;">
+              <div class="card-body">
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+                  <div style="width: 56px; height: 56px; border-radius: 50%; background: #fdf2f8; color: #db2777; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800;">SM</div>
+                  <div>
+                    <h3 style="font-size: 16px; font-weight: 800;">Ms. Sarah Miller</h3>
+                    <p style="font-size: 12px; color: var(--text-muted);">Thạc sĩ Giảng dạy Ngôn ngữ (Úc)</p>
+                    <div style="display: flex; gap: 6px; margin-top: 6px;">
+                      <span class="badge badge-purple">IELTS 8.5</span>
+                      <span class="badge badge-info">TESOL Master</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; font-size: 13px; display: flex; justify-content: space-between;">
+                  <span>Lớp đang dạy: <strong>2 lớp</strong></span>
+                  <span>Đánh giá: <strong style="color: #f59e0b;">★ 4.90 / 5.0</strong></span>
+                </div>
+                <div style="margin-top: 14px;">
+                  <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="switchView('schedule')">Xem lịch dạy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Teacher Card 3 -->
+            <div class="card" style="margin-bottom: 0;">
+              <div class="card-body">
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+                  <div style="width: 56px; height: 56px; border-radius: 50%; background: #ecfdf5; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800;">HN</div>
+                  <div>
+                    <h3 style="font-size: 16px; font-weight: 800;">Thầy Nguyễn Hải Nam</h3>
+                    <p style="font-size: 12px; color: var(--text-muted);">Trưởng bộ môn TOEIC & Tiếng Anh Thương Mại</p>
+                    <div style="display: flex; gap: 6px; margin-top: 6px;">
+                      <span class="badge badge-purple">TOEIC 990/990</span>
+                      <span class="badge badge-info">IELTS 8.0</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; font-size: 13px; display: flex; justify-content: space-between;">
+                  <span>Lớp đang dạy: <strong>4 lớp</strong></span>
+                  <span>Đánh giá: <strong style="color: #f59e0b;">★ 4.98 / 5.0</strong></span>
+                </div>
+                <div style="margin-top: 14px;">
+                  <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="switchView('schedule')">Xem lịch dạy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 4. CLASSES LIST VIEW ==================== -->
+        <section id="view-classes" class="view-section" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 800;">Danh Sách Lớp Học</h2>
+              <p style="font-size: 13px; color: var(--text-muted);">Quản lý lớp học, sĩ số, lộ trình đào tạo và phân công giảng viên</p>
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Mở hộp thoại tạo lớp học mới', 'info')">
+              + Mở Lớp Học Mới
+            </button>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Mã & Tên Lớp</th>
+                    <th>Giáo Viên Phụ Trách</th>
+                    <th>Lịch Học Tuần</th>
+                    <th>Sĩ Số (Thực tế / Tối đa)</th>
+                    <th>Học Phí Trọn Khóa</th>
+                    <th>Trạng Thái</th>
+                    <th>Chi Tiết</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div><strong>IELTS-INT-65-K24</strong></div>
+                      <div style="font-size: 12px; color: var(--text-muted);">IELTS Intensive 6.5+ Mục tiêu đầu ra 6.5 - 7.0</div>
+                    </td>
+                    <td>Mr. Robert Taylor</td>
+                    <td>Thứ 2 - 4 - 6 (18:00 - 19:30)</td>
+                    <td>
+                      <div><strong>18 / 20</strong></div>
+                      <div style="width: 100px; height: 6px; background: #e2e8f0; border-radius: 99px; margin-top: 4px;">
+                        <div style="width: 90%; height: 100%; background: #2563eb; border-radius: 99px;"></div>
+                      </div>
+                    </td>
+                    <td><strong>8.500.000 ₫</strong></td>
+                    <td><span class="badge badge-success"><span class="badge-dot"></span> Đang diễn ra</span></td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" onclick="switchView('class-detail')">Quản lý lớp →</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div><strong>TOEIC-750-K12</strong></div>
+                      <div style="font-size: 12px; color: var(--text-muted);">TOEIC 750 Cấp Tốc 2 tháng</div>
+                    </td>
+                    <td>Ms. Sarah Miller</td>
+                    <td>Thứ 3 - 5 - 7 (19:45 - 21:15)</td>
+                    <td>
+                      <div><strong>22 / 25</strong></div>
+                      <div style="width: 100px; height: 6px; background: #e2e8f0; border-radius: 99px; margin-top: 4px;">
+                        <div style="width: 88%; height: 100%; background: #10b981; border-radius: 99px;"></div>
+                      </div>
+                    </td>
+                    <td><strong>5.200.000 ₫</strong></td>
+                    <td><span class="badge badge-success"><span class="badge-dot"></span> Đang diễn ra</span></td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" onclick="switchView('class-detail')">Quản lý lớp →</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div><strong>COMM-PRO-K08</strong></div>
+                      <div style="font-size: 12px; color: var(--text-muted);">Tiếng Anh Giao Tiếp Phản Xạ Thương Mại</div>
+                    </td>
+                    <td>Thầy Nguyễn Hải Nam</td>
+                    <td>Thứ 2 - 4 (19:30 - 21:00)</td>
+                    <td>
+                      <div><strong>12 / 12</strong> (Đủ sĩ số)</div>
+                      <div style="width: 100px; height: 6px; background: #e2e8f0; border-radius: 99px; margin-top: 4px;">
+                        <div style="width: 100%; height: 100%; background: #f59e0b; border-radius: 99px;"></div>
+                      </div>
+                    </td>
+                    <td><strong>6.800.000 ₫</strong></td>
+                    <td><span class="badge badge-info"><span class="badge-dot"></span> Đủ chỉ tiêu</span></td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" onclick="switchView('class-detail')">Quản lý lớp →</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 5. CLASS DETAIL (EXPANDED WORKSPACE) ==================== -->
+        <section id="view-class-detail" class="view-section" style="display: none;">
+          <div style="margin-bottom: 20px;">
+            <button class="btn btn-secondary btn-sm" onclick="switchView('classes')" style="margin-bottom: 12px;">
+              ← Quay lại danh sách lớp
+            </button>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <h2 style="font-size: 22px; font-weight: 800;">Lớp Học: IELTS Intensive 6.5+ (K24)</h2>
+                <p style="font-size: 13px; color: var(--text-muted);">Mã lớp: IELTS-INT-65-K24 • Giảng viên: Mr. Robert Taylor • Phòng: Lab 301</p>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <button class="btn btn-primary btn-sm" onclick="openModal('modal-enrollment')">+ Ghi danh học viên</button>
+                <button class="btn btn-secondary btn-sm" onclick="showToast('Đang tạo tự động 30 buổi học theo thời khóa biểu...', 'success')">⚡ Tự động sinh buổi học</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class Subtabs -->
+          <div style="display: flex; gap: 8px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 24px;">
+            <button class="role-tab-btn class-tab-btn active" data-tab="overview" onclick="switchClassTab('overview')">Tổng quan lớp học</button>
+            <button class="role-tab-btn class-tab-btn" data-tab="roster" onclick="switchClassTab('roster')">Danh sách học viên (18)</button>
+            <button class="role-tab-btn class-tab-btn" data-tab="sessions" onclick="switchClassTab('sessions')">Buổi học (30 Buổi)</button>
+            <button class="role-tab-btn class-tab-btn" data-tab="attendance" onclick="switchClassTab('attendance')">Điểm danh</button>
+            <button class="role-tab-btn class-tab-btn" data-tab="results" onclick="switchClassTab('results')">Bảng điểm 4 kỹ năng</button>
+          </div>
+
+          <!-- Subtab 1: Overview -->
+          <div id="class-tab-overview" class="class-subtab-pane">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+              <div class="card">
+                <div class="card-header"><div class="card-title">Thông Tin Khóa Học</div></div>
+                <div class="card-body" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 13.5px;">
+                  <div><strong style="color: var(--text-muted);">Ngày bắt đầu:</strong> 15/09/2026</div>
+                  <div><strong style="color: var(--text-muted);">Ngày dự kiến kết thúc:</strong> 20/12/2026</div>
+                  <div><strong style="color: var(--text-muted);">Thời lượng:</strong> 30 buổi (45 giờ học)</div>
+                  <div><strong style="color: var(--text-muted);">Học phí:</strong> 8.500.000 ₫ / học viên</div>
+                  <div><strong style="color: var(--text-muted);">Phòng học:</strong> Lab 301 (Máy chiếu, tai nghe chuyên dụng)</div>
+                  <div><strong style="color: var(--text-muted);">Trợ giảng:</strong> Đỗ Thu Thảo (IELTS 7.5)</div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><div class="card-title">Chỉ Số Khóa Học</div></div>
+                <div class="card-body">
+                  <div style="margin-bottom: 14px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+                      <span>Tiến độ hoàn thành:</span>
+                      <strong>16 / 30 buổi (53%)</strong>
+                    </div>
+                    <div style="width: 100%; height: 8px; background: #e2e8f0; border-radius: 99px;">
+                      <div style="width: 53%; height: 100%; background: #2563eb; border-radius: 99px;"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+                      <span>Thu học phí lớp:</span>
+                      <strong>153.000.000 ₫ (100%)</strong>
+                    </div>
+                    <div style="width: 100%; height: 8px; background: #e2e8f0; border-radius: 99px;">
+                      <div style="width: 100%; height: 100%; background: #10b981; border-radius: 99px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subtab 2: Students Roster -->
+          <div id="class-tab-roster" class="class-subtab-pane" style="display: none;">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Học Viên Trong Lớp (18 Học viên)</div>
+                <button class="btn btn-primary btn-sm" onclick="openModal('modal-enrollment')">+ Thêm học viên vào lớp</button>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Học Viên</th>
+                      <th>Ngày Ghi Danh</th>
+                      <th>Chuyên Cần</th>
+                      <th>Điểm TB</th>
+                      <th>Học Phí</th>
+                      <th>Hành Động</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="table-user">
+                          <div class="table-user-avatar">NA</div>
+                          <div>
+                            <div class="table-user-name">Nguyễn Văn An</div>
+                            <div class="table-user-code">HV-2026-081</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>12/09/2026</td>
+                      <td>16/16 buổi (100%)</td>
+                      <td><span class="badge badge-purple">7.0</span></td>
+                      <td><span class="badge badge-success"><span class="badge-dot"></span> Đã thanh toán</span></td>
+                      <td>
+                        <button class="btn btn-secondary btn-sm" onclick="showToast('Mở modal chuyển lớp cho HV', 'info')">Chuyển lớp</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-user">
+                          <div class="table-user-avatar">PT</div>
+                          <div>
+                            <div class="table-user-name">Phạm Thanh Tùng</div>
+                            <div class="table-user-code">HV-2026-088</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>14/09/2026</td>
+                      <td>15/16 buổi (94%)</td>
+                      <td><span class="badge badge-purple">6.5</span></td>
+                      <td><span class="badge badge-success"><span class="badge-dot"></span> Đã thanh toán</span></td>
+                      <td>
+                        <button class="btn btn-secondary btn-sm" onclick="showToast('Mở modal chuyển lớp cho HV', 'info')">Chuyển lớp</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subtab 3: Sessions -->
+          <div id="class-tab-sessions" class="class-subtab-pane" style="display: none;">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Lịch Trình 30 Buổi Học</div></div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Buổi số</th>
+                      <th>Ngày học</th>
+                      <th>Thời gian</th>
+                      <th>Nội dung bài học</th>
+                      <th>Tình trạng</th>
+                      <th>Điểm danh</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Buổi 16 (Hôm nay)</strong></td>
+                      <td>14/10/2026</td>
+                      <td>18:00 - 19:30</td>
+                      <td>IELTS Writing Task 2: Opinion Essay structures</td>
+                      <td><span class="badge badge-success"><span class="badge-dot"></span> Đang diễn ra</span></td>
+                      <td><button class="btn btn-primary btn-sm" onclick="switchClassTab('attendance')">Điểm danh ngay</button></td>
+                    </tr>
+                    <tr>
+                      <td>Buổi 17</td>
+                      <td>16/10/2026</td>
+                      <td>18:00 - 19:30</td>
+                      <td>Speaking Part 3: Abstract thinking & Idioms</td>
+                      <td><span class="badge badge-warning"><span class="badge-dot"></span> Chưa diễn ra</span></td>
+                      <td>—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subtab 4: Attendance in Class -->
+          <div id="class-tab-attendance" class="class-subtab-pane" style="display: none;">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Điểm Danh Buổi 16 (14/10/2026)</div>
+                  <div class="card-desc">Ca học: 18:00 - 19:30 • Phòng Lab 301</div>
+                </div>
+                <button class="btn btn-primary" onclick="showToast('Đã lưu thành công kết quả điểm danh!', 'success')">💾 Lưu Điểm Danh</button>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Học viên</th>
+                      <th>Trạng thái điểm danh</th>
+                      <th>Ghi chú</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong>Nguyễn Văn An</strong> (HV-2026-081)
+                      </td>
+                      <td>
+                        <div class="attendance-pills">
+                          <button class="att-pill active-present" onclick="toggleAttendance(this, 'present')">Có mặt</button>
+                          <button class="att-pill" onclick="toggleAttendance(this, 'late')">Đi muộn</button>
+                          <button class="att-pill" onclick="toggleAttendance(this, 'absent')">Vắng</button>
+                          <button class="att-pill" onclick="toggleAttendance(this, 'excused')">Có phép</button>
+                        </div>
+                      </td>
+                      <td><input type="text" class="form-control" placeholder="Ghi chú nếu có..." style="padding: 6px 10px;"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Phạm Thanh Tùng</strong> (HV-2026-088)
+                      </td>
+                      <td>
+                        <div class="attendance-pills">
+                          <button class="att-pill active-present" onclick="toggleAttendance(this, 'present')">Có mặt</button>
+                          <button class="att-pill" onclick="toggleAttendance(this, 'late')">Đi muộn</button>
+                          <button class="att-pill" onclick="toggleAttendance(this, 'absent')">Vắng</button>
+                          <button class="att-pill" onclick="toggleAttendance(this, 'excused')">Có phép</button>
+                        </div>
+                      </td>
+                      <td><input type="text" class="form-control" placeholder="Ghi chú nếu có..." style="padding: 6px 10px;"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subtab 5: Results 4 Skills -->
+          <div id="class-tab-results" class="class-subtab-pane" style="display: none;">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Bảng Điểm 4 Kỹ Năng - Kỳ Thi Midterm Test</div>
+                  <div class="card-desc">Hệ thống tự động tính điểm Trung Bình (Overall Band Score)</div>
+                </div>
+                <button class="btn btn-primary" onclick="showToast('Đã lưu bảng điểm 4 kỹ năng!', 'success')">💾 Lưu Bảng Điểm</button>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Học viên</th>
+                      <th>Listening (Nghe)</th>
+                      <th>Reading (Đọc)</th>
+                      <th>Writing (Viết)</th>
+                      <th>Speaking (Nói)</th>
+                      <th>Điểm TB (Overall)</th>
+                      <th>Xếp loại</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="score-row-1">
+                      <td><strong>Nguyễn Văn An</strong></td>
+                      <td><input type="number" class="score-input" value="7.5" step="0.5" oninput="updateScoreAvg('score-row-1')"></td>
+                      <td><input type="number" class="score-input" value="7.0" step="0.5" oninput="updateScoreAvg('score-row-1')"></td>
+                      <td><input type="number" class="score-input" value="6.5" step="0.5" oninput="updateScoreAvg('score-row-1')"></td>
+                      <td><input type="number" class="score-input" value="7.0" step="0.5" oninput="updateScoreAvg('score-row-1')"></td>
+                      <td><strong class="score-avg" style="font-size: 15px; color: var(--primary);">7.0</strong></td>
+                      <td><span class="badge badge-success"><span class="badge-dot"></span> Đạt chỉ tiêu</span></td>
+                    </tr>
+                    <tr id="score-row-2">
+                      <td><strong>Phạm Thanh Tùng</strong></td>
+                      <td><input type="number" class="score-input" value="6.5" step="0.5" oninput="updateScoreAvg('score-row-2')"></td>
+                      <td><input type="number" class="score-input" value="6.5" step="0.5" oninput="updateScoreAvg('score-row-2')"></td>
+                      <td><input type="number" class="score-input" value="6.0" step="0.5" oninput="updateScoreAvg('score-row-2')"></td>
+                      <td><input type="number" class="score-input" value="6.5" step="0.5" oninput="updateScoreAvg('score-row-2')"></td>
+                      <td><strong class="score-avg" style="font-size: 15px; color: var(--primary);">6.4</strong></td>
+                      <td><span class="badge badge-info"><span class="badge-dot"></span> Khá</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 6. SCHEDULE / TIMETABLE VIEW ==================== -->
+        <section id="view-schedule" class="view-section" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 800;">Thời Khóa Biểu Trung Tâm</h2>
+              <p style="font-size: 13px; color: var(--text-muted);">Phát hiện tự động xung đột lịch dạy của giảng viên và trùng phòng học</p>
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Mở form xếp thời khóa biểu mới', 'info')">
+              + Xếp Lịch Học Mới
+            </button>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table" style="text-align: center;">
+                <thead>
+                  <tr>
+                    <th style="width: 140px;">Khung Giờ</th>
+                    <th>Thứ Hai</th>
+                    <th>Thứ Ba</th>
+                    <th>Thứ Tư</th>
+                    <th>Thứ Năm</th>
+                    <th>Thứ Sáu</th>
+                    <th>Thứ Bảy</th>
+                    <th>Chủ Nhật</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Ca 1<br><span style="font-size: 11px; color: var(--text-muted);">17:30 - 19:00</span></strong></td>
+                    <td>
+                      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 8px; text-align: left;">
+                        <div style="font-weight: 700; font-size: 12px; color: #1e40af;">IELTS 6.5+ (K24)</div>
+                        <div style="font-size: 11px; color: #3b82f6;">Mr. Robert • P.301</div>
+                      </div>
+                    </td>
+                    <td>—</td>
+                    <td>
+                      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 8px; text-align: left;">
+                        <div style="font-weight: 700; font-size: 12px; color: #1e40af;">IELTS 6.5+ (K24)</div>
+                        <div style="font-size: 11px; color: #3b82f6;">Mr. Robert • P.301</div>
+                      </div>
+                    </td>
+                    <td>—</td>
+                    <td>
+                      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 8px; text-align: left;">
+                        <div style="font-weight: 700; font-size: 12px; color: #1e40af;">IELTS 6.5+ (K24)</div>
+                        <div style="font-size: 11px; color: #3b82f6;">Mr. Robert • P.301</div>
+                      </div>
+                    </td>
+                    <td>—</td>
+                    <td>—</td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Ca 2<br><span style="font-size: 11px; color: var(--text-muted);">19:30 - 21:00</span></strong></td>
+                    <td>
+                      <div style="background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 8px; padding: 8px; text-align: left;">
+                        <div style="font-weight: 700; font-size: 12px; color: #9d174d;">Giao Tiếp Pro (K08)</div>
+                        <div style="font-size: 11px; color: #db2777;">Thầy Nam • P.102</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 8px; text-align: left;">
+                        <div style="font-weight: 700; font-size: 12px; color: #065f46;">TOEIC 750 (K12)</div>
+                        <div style="font-size: 11px; color: #059669;">Ms. Sarah • P.204</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div style="background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 8px; padding: 8px; text-align: left;">
+                        <div style="font-weight: 700; font-size: 12px; color: #9d174d;">Giao Tiếp Pro (K08)</div>
+                        <div style="font-size: 11px; color: #db2777;">Thầy Nam • P.102</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 8px; text-align: left;">
+                        <div style="font-weight: 700; font-size: 12px; color: #065f46;">TOEIC 750 (K12)</div>
+                        <div style="font-size: 11px; color: #059669;">Ms. Sarah • P.204</div>
+                      </div>
+                    </td>
+                    <td>—</td>
+                    <td>
+                      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 8px; text-align: left;">
+                        <div style="font-weight: 700; font-size: 12px; color: #065f46;">TOEIC 750 (K12)</div>
+                        <div style="font-size: 11px; color: #059669;">Ms. Sarah • P.204</div>
+                      </div>
+                    </td>
+                    <td>—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 7. TUITION & PAYMENTS VIEW ==================== -->
+        <section id="view-tuition" class="view-section" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 800;">Quản Lý Học Phí & Hóa Đơn</h2>
+              <p style="font-size: 13px; color: var(--text-muted);">Theo dõi công nợ học viên, lập phiếu thu nhiều đợt và quản lý hủy phiếu (Void)</p>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('modal-payment')">
+              + Lập Phiếu Thu Mới
+            </button>
+          </div>
+
+          <!-- Tuition KPIs -->
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div>
+                <div class="stat-label">Tổng Học Phí Đã Thu</div>
+                <div class="stat-value" style="color: #10b981;">286.500.000 ₫</div>
+                <div class="stat-meta positive">Đã hoàn thành 142 phiếu thu</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div>
+                <div class="stat-label">Công Nợ Còn Phải Thu</div>
+                <div class="stat-value" style="color: #f59e0b;">42.000.000 ₫</div>
+                <div class="stat-meta neutral">18 học viên đóng theo đợt</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div>
+                <div class="stat-label">Hóa Đơn Quá Hạn</div>
+                <div class="stat-value" style="color: #ef4444;">14.500.000 ₫</div>
+                <div class="stat-meta negative">4 học viên cần gửi nhắc phí</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Invoices Table -->
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Mã Hóa Đơn</th>
+                    <th>Học Viên</th>
+                    <th>Lớp Học</th>
+                    <th>Tổng Tiền</th>
+                    <th>Đã Đóng</th>
+                    <th>Còn Lại</th>
+                    <th>Tình Trạng</th>
+                    <th>Hành Động</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>INV-2026-0089</strong></td>
+                    <td>Nguyễn Văn An</td>
+                    <td>IELTS Intensive 6.5+</td>
+                    <td>8.500.000 ₫</td>
+                    <td>8.500.000 ₫</td>
+                    <td>0 ₫</td>
+                    <td><span class="badge badge-success"><span class="badge-dot"></span> Đã hoàn thành</span></td>
+                    <td>
+                      <button class="btn btn-secondary btn-sm" onclick="openModal('modal-void')">Hủy phiếu (Void)</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>INV-2026-0092</strong></td>
+                    <td>Trần Thu Hà</td>
+                    <td>TOEIC 750 Cấp Tốc</td>
+                    <td>5.200.000 ₫</td>
+                    <td>3.200.000 ₫</td>
+                    <td><strong style="color: #f59e0b;">2.000.000 ₫</strong></td>
+                    <td><span class="badge badge-warning"><span class="badge-dot"></span> Còn nợ đợt 2</span></td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" onclick="openModal('modal-payment')">Thu tiền đợt 2</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 8. NOTICE BOARD VIEW ==================== -->
+        <section id="view-notices" class="view-section" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 800;">Bảng Thông Báo Toàn Trung Tâm</h2>
+              <p style="font-size: 13px; color: var(--text-muted);">Gửi thông báo định hướng theo nhóm đối tượng: Toàn trường, Giảng viên, Học viên</p>
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Mở trình soạn thảo thông báo mới', 'info')">
+              + Đăng Thông Báo Mới
+            </button>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <!-- Notice 1 -->
+            <div class="card" style="margin-bottom: 0;">
+              <div class="card-body">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                  <h3 style="font-size: 16px; font-weight: 800; color: var(--text-main);">📢 Lịch Nghỉ Lễ Quốc Khánh & Lịch Học Bù Tháng 10</h3>
+                  <span class="badge badge-info">Tất cả đối tượng</span>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-main); line-height: 1.6; margin-bottom: 12px;">
+                  Trung tâm VLearn trân trọng thông báo lịch nghỉ lễ tới toàn thể Cán bộ, Giảng viên và Quý Học viên. Các lớp học có lịch trùng vào ngày nghỉ sẽ được bố trí học bù vào cuối tuần tiếp theo.
+                </p>
+                <div style="font-size: 12px; color: var(--text-muted);">Đăng bởi: Ban Giám Đốc • Ngày 01/10/2026</div>
+              </div>
+            </div>
+
+            <!-- Notice 2 -->
+            <div class="card" style="margin-bottom: 0;">
+              <div class="card-body">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                  <h3 style="font-size: 16px; font-weight: 800; color: var(--text-main);">📝 Hướng Dẫn Nộp Đề Thi Và Nhập Điểm Giữa Kỳ (Midterm Test)</h3>
+                  <span class="badge badge-purple">Chỉ Giảng Viên</span>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-main); line-height: 1.6; margin-bottom: 12px;">
+                  Kính gửi Quý Giảng viên, hạn chót nhập điểm 4 kỹ năng Listening - Reading - Writing - Speaking cho các lớp khai giảng tháng 9 là ngày 20/10/2026.
+                </p>
+                <div style="font-size: 12px; color: var(--text-muted);">Đăng bởi: Phòng Đào Tạo • Ngày 10/10/2026</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 9. STUDY MATERIALS VIEW ==================== -->
+        <section id="view-materials" class="view-section" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 800;">Kho Tài Liệu Học Tập & Bài Giảng</h2>
+              <p style="font-size: 13px; color: var(--text-muted);">Tài liệu chia sẻ theo lớp học: Slide bài giảng, Audio luyện nghe, Đề thi mẫu</p>
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Mở cửa sổ tải lên tài liệu mới', 'info')">
+              + Tải Lên Tài Liệu Mới
+            </button>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <!-- Material Item 1 -->
+            <div class="card" style="margin-bottom: 0;">
+              <div class="card-body">
+                <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 12px;">
+                  <div style="width: 44px; height: 44px; border-radius: 8px; background: #fef2f2; color: #ef4444; display: flex; align-items: center; justify-content: center; font-weight: 800;">PDF</div>
+                  <div>
+                    <div style="font-weight: 700; font-size: 14px;">IELTS Cambridge 19 Tests.pdf</div>
+                    <div style="font-size: 11.5px; color: var(--text-muted);">Dung lượng: 18.5 MB • 42 lượt tải</div>
+                  </div>
+                </div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">Áp dụng cho: Lớp IELTS Intensive 6.5+</div>
+                <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="showToast('Đang tải xuống tài liệu IELTS Cambridge 19...', 'success')">📥 Tải về máy</button>
+              </div>
+            </div>
+
+            <!-- Material Item 2 -->
+            <div class="card" style="margin-bottom: 0;">
+              <div class="card-body">
+                <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 12px;">
+                  <div style="width: 44px; height: 44px; border-radius: 8px; background: #eff6ff; color: #2563eb; display: flex; align-items: center; justify-content: center; font-weight: 800;">MP3</div>
+                  <div>
+                    <div style="font-weight: 700; font-size: 14px;">Listening_Practice_Session_16.mp3</div>
+                    <div style="font-size: 11.5px; color: var(--text-muted);">Dung lượng: 32.1 MB • 68 lượt tải</div>
+                  </div>
+                </div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">Áp dụng cho: Lớp TOEIC 750 Cấp Tốc</div>
+                <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="showToast('Đang tải xuống file audio luyện nghe...', 'success')">📥 Tải về máy</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 10. ACCOUNTS & ROLE MATRIX ==================== -->
+        <section id="view-accounts" class="view-section" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 800;">Quản Trị Tài Khoản Người Dùng</h2>
+              <p style="font-size: 13px; color: var(--text-muted);">Cấp quyền, kích hoạt và khóa tài khoản cán bộ nhân viên</p>
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Mở modal cấp tài khoản mới', 'info')">
+              + Tạo Tài Khoản Mới
+            </button>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Họ Tên & Email</th>
+                    <th>Vai Trò (Role)</th>
+                    <th>Trạng Thái</th>
+                    <th>Lần Đăng Nhập Cuối</th>
+                    <th>Thao Tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>Admin Hoàng Long</strong><br>
+                      <span style="font-size: 12px; color: var(--text-muted);">admin@vlearn.edu.vn</span>
+                    </td>
+                    <td><span class="badge badge-purple">Admin</span></td>
+                    <td><span class="badge badge-success"><span class="badge-dot"></span> Đang hoạt động</span></td>
+                    <td>14/10/2026 - 21:30</td>
+                    <td><button class="btn btn-secondary btn-sm" disabled>Mặc định</button></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong>Lễ tân Minh Thư</strong><br>
+                      <span style="font-size: 12px; color: var(--text-muted);">thumt@vlearn.edu.vn</span>
+                    </td>
+                    <td><span class="badge badge-info">Receptionist</span></td>
+                    <td><span class="badge badge-success"><span class="badge-dot"></span> Đang hoạt động</span></td>
+                    <td>14/10/2026 - 19:40</td>
+                    <td>
+                      <button class="btn btn-secondary btn-sm" onclick="showToast('Đổi quyền người dùng', 'info')">Đổi Role</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 11. ROLE MATRIX VIEW ==================== -->
+        <section id="view-roles" class="view-section" style="display: none;">
+          <div style="margin-bottom: 20px;">
+            <h2 style="font-size: 20px; font-weight: 800;">Ma Trận Phân Quyền Hệ Thống (4 Roles Matrix)</h2>
+            <p style="font-size: 13px; color: var(--text-muted);">Bản quyền chi tiết theo đặc tả yêu cầu nghiệp vụ của hệ thống VLearn</p>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Phân Hệ / Nghiệp Vụ</th>
+                    <th>Quản Trị Viên (Admin)</th>
+                    <th>Lễ Tân (Receptionist)</th>
+                    <th>Giáo Viên (Teacher)</th>
+                    <th>Học Viên (Student)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Tài khoản & Phân quyền</strong></td>
+                    <td><span class="badge badge-success">Toàn quyền (CRUD, Khóa)</span></td>
+                    <td><span class="badge badge-danger">Không có quyền</span></td>
+                    <td><span class="badge badge-danger">Không có quyền</span></td>
+                    <td><span class="badge badge-danger">Không có quyền</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hồ sơ Học viên</strong></td>
+                    <td><span class="badge badge-success">Toàn quyền</span></td>
+                    <td><span class="badge badge-info">Tạo mới, Cập nhật, Tra cứu</span></td>
+                    <td><span class="badge badge-warning">Chỉ xem học viên lớp mình dạy</span></td>
+                    <td><span class="badge badge-info">Chỉ xem & sửa hồ sơ cá nhân</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Lớp học & Xếp lớp (Enrollment)</strong></td>
+                    <td><span class="badge badge-success">Toàn quyền mở lớp & gán GV</span></td>
+                    <td><span class="badge badge-info">Ghi danh, Chuyển lớp, Rút tên</span></td>
+                    <td><span class="badge badge-warning">Chỉ xem thông tin lớp mình dạy</span></td>
+                    <td><span class="badge badge-info">Chỉ xem lớp đang theo học</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Thời khóa biểu & Sinh buổi học</strong></td>
+                    <td><span class="badge badge-success">Toàn quyền & Bấm tự động sinh buổi</span></td>
+                    <td><span class="badge badge-info">Xem lịch toàn trung tâm</span></td>
+                    <td><span class="badge badge-warning">Xem lịch dạy cá nhân</span></td>
+                    <td><span class="badge badge-info">Xem lịch học cá nhân</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Điểm danh (Attendance)</strong></td>
+                    <td><span class="badge badge-success">Toàn quyền & Báo cáo</span></td>
+                    <td><span class="badge badge-info">Tra cứu chuyên cần</span></td>
+                    <td><span class="badge badge-success">Điểm danh các buổi phụ trách</span></td>
+                    <td><span class="badge badge-info">Xem lịch sử chuyên cần bản thân</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Kết quả học tập 4 kỹ năng</strong></td>
+                    <td><span class="badge badge-success">Toàn quyền & Thống kê</span></td>
+                    <td><span class="badge badge-info">Tra cứu bảng điểm</span></td>
+                    <td><span class="badge badge-success">Nhập & sửa điểm lớp phụ trách</span></td>
+                    <td><span class="badge badge-info">Xem bảng điểm cá nhân</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Học phí & Hủy phiếu thu (Void)</strong></td>
+                    <td><span class="badge badge-success">Toàn quyền & Duyệt Hủy phiếu (Void)</span></td>
+                    <td><span class="badge badge-info">Lập phiếu thu, Thu tiền các đợt</span></td>
+                    <td><span class="badge badge-danger">Không có quyền (Bảo mật)</span></td>
+                    <td><span class="badge badge-info">Xem tình trạng công nợ</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Modal 1: Add Student -->
+  <div id="modal-add-student" class="modal-overlay">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title">+ Thêm Mới Hồ Sơ Học Viên</div>
+        <button class="table-btn" onclick="closeModal('modal-add-student')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Họ và Tên Học Viên (*)</label>
+          <input type="text" class="form-input-text" placeholder="Ví dụ: Hoàng Minh Đức">
+        </div>
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label>Địa Chỉ Email (*)</label>
+            <input type="email" class="form-input-text" placeholder="duc.hm@gmail.com">
+          </div>
+          <div>
+            <label>Số Điện Thoại (*)</label>
+            <input type="text" class="form-input-text" placeholder="0912.345.678">
+          </div>
+        </div>
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label>Ngày Sinh</label>
+            <input type="date" class="form-input-text">
+          </div>
+          <div>
+            <label>Giới Tính</label>
+            <select class="form-input-text">
+              <option value="male">Nam</option>
+              <option value="female">Nữ</option>
+              <option value="other">Khác</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Ghi Chú Yêu Cầu Học Vụ</label>
+          <textarea class="form-input-text" rows="3" placeholder="Mục tiêu band điểm 6.5 trong 3 tháng..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal('modal-add-student')">Hủy bỏ</button>
+        <button class="btn btn-primary" onclick="closeModal('modal-add-student'); showToast('Tạo mới học viên thành công!', 'success');">Lưu Hồ Sơ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Payment Modal -->
+  <div id="modal-payment" class="modal-overlay">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title">💳 Lập Phiếu Thu Học Phí Đợt Mới</div>
+        <button class="table-btn" onclick="closeModal('modal-payment')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: #eff6ff; border-radius: 8px; padding: 12px; margin-bottom: 16px; font-size: 13px;">
+          <div>Học viên: <strong>Trần Thu Hà</strong> (HV-2026-094)</div>
+          <div>Lớp học: <strong>TOEIC 750 Cấp Tốc</strong></div>
+          <div style="color: #ef4444; font-weight: 700; margin-top: 4px;">Công nợ còn lại: 2.000.000 ₫</div>
+        </div>
+        <div class="form-group">
+          <label>Số Tiền Thu Đợt Này (VNĐ) (*)</label>
+          <input type="number" class="form-input-text" value="2000000">
+        </div>
+        <div class="form-group">
+          <label>Hình Thức Thanh Toán</label>
+          <select class="form-input-text">
+            <option value="transfer">Chuyển khoản Ngân hàng (QR Code)</option>
+            <option value="cash">Tiền mặt tại quầy lễ tân</option>
+            <option value="pos">Quẹt thẻ POS</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mã Giao Dịch Ngân Hàng (Nếu có)</label>
+          <input type="text" class="form-input-text" placeholder="FT26101499281...">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal('modal-payment')">Hủy</button>
+        <button class="btn btn-primary" onclick="closeModal('modal-payment'); showToast('Xác nhận thu học phí thành công! Đã cập nhật công nợ.', 'success');">Xác Nhận Thu Tiền</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Void Payment Dialog -->
+  <div id="modal-void" class="modal-overlay">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title" style="color: #ef4444;">⚠️ Yêu Cầu Hủy Phiếu Thu (Void Payment)</div>
+        <button class="table-btn" onclick="closeModal('modal-void')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 13.5px; color: var(--text-main); margin-bottom: 14px; line-height: 1.5;">
+          Bạn đang thực hiện thao tác nhạy cảm: <strong>Hủy phiếu thu INV-2026-0089</strong> số tiền <strong>8.500.000 ₫</strong>. Công nợ của học viên sẽ được hoàn nguyên và ghi nhận vào nhật ký kiểm toán (Audit Log).
+        </p>
+        <div class="form-group">
+          <label>Lý do hủy phiếu thu (Bắt buộc tối thiểu 10 ký tự) (*)</label>
+          <textarea class="form-input-text" rows="3" placeholder="Nhập lý do chi tiết (ví dụ: Thu nhầm số tiền, học viên đổi khóa học...)" required></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal('modal-void')">Đóng</button>
+        <button class="btn btn-danger" onclick="closeModal('modal-void'); showToast('Đã hủy phiếu thu thành công và hoàn nguyên công nợ!', 'error');">Xác Nhận Hủy Phiếu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Enrollment Modal -->
+  <div id="modal-enrollment" class="modal-overlay">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title">Ghi Danh Học Viên Vào Lớp</div>
+        <button class="table-btn" onclick="closeModal('modal-enrollment')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Chọn Học Viên Cần Xếp Lớp (*)</label>
+          <select class="form-input-text">
+            <option value="1">Nguyễn Văn An (HV-2026-081) - 0912.456.789</option>
+            <option value="2">Trần Thu Hà (HV-2026-094) - 0988.112.233</option>
+            <option value="3">Lê Minh Khang (HV-2026-102) - 0903.778.899</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Lớp Học Được Chọn</label>
+          <input type="text" class="form-input-text" value="IELTS Intensive 6.5+ (K24)" disabled>
+        </div>
+        <div class="form-group">
+          <label>Hình thức học phí</label>
+          <select class="form-input-text">
+            <option value="full">Đóng trọn gói 1 đợt (Giảm 5%)</option>
+            <option value="split">Chia làm 2 đợt</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal('modal-enrollment')">Hủy</button>
+        <button class="btn btn-primary" onclick="closeModal('modal-enrollment'); showToast('Ghi danh học viên vào lớp thành công!', 'success');">Xác Nhận Ghi Danh</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
